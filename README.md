@@ -39,6 +39,63 @@ If placed correctly, you'll find a new menu entry in Unity:
 
 ---
 
+## 👾 Customize Enemy Usage
+
+In the generated script, you’ll find a section that defines **which enemies** can use your voice pack:
+
+```csharp
+// Enemy IDs that can use this voice pack
+private HashSet<int> _enemyIds = new HashSet<int>()
+{
+    // Vanilla Humans
+    128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146
+
+    // DEX Humans
+    , 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398
+};
+```
+
+If you want your voice pack to be used by **non-human enemies** (like monsters, undead, Daedra, etc.), you need to **replace or extend** this list with the appropriate enemy IDs.
+Make sure the last number isn't followed by a comma.
+
+### 📑 Reference Tables
+
+Use these references to find the correct enemy IDs:
+
+- ✅ **Vanilla Daggerfall Unity enemy IDs:**  
+  👉 [Quests-Foes.txt on GitHub](https://github.com/Interkarma/daggerfall-unity/blob/master/Assets/StreamingAssets/Tables/Quests-Foes.txt)
+
+- ✅ **DEX modded enemies (Daggerfall Enemy Expander):**  
+  👉 [DEX MonsterBase.mdb.csv](https://github.com/SquidKamer/DaggerfallBestiaryProject/blob/main/MonsterBase.mdb.csv)
+
+If you want to create a voice pack for rats, it would look like this:
+```csharp
+// Enemy IDs that can use this voice pack
+private HashSet<int> _enemyIds = new HashSet<int>()
+{
+   // Rats
+   0
+};
+```
+
+or for Nymphs:
+```csharp
+// Enemy IDs that can use this voice pack
+private HashSet<int> _enemyIds = new HashSet<int>()
+{
+   //Vanilla Nymph
+   10
+   
+   //DEX Nymph
+   , 268
+};
+```
+
+Daggertalk also provides an option to silence the default monster noises and add an optional skill check for a language skill.
+See at the end for further information.
+
+---
+
 ## 🗂️ Create Your Mod and Audio Structure
 
 1. In Unity, navigate to:  
@@ -175,4 +232,57 @@ The script already created your .dfmod file and referenced all necessary files f
 
 ❗Make sure to check `Precompile (experimental)` in the Mod Builder!
 
-Happy modding! 🎮🛠️
+---
+
+## 🧠 Optional: Add Skill Check and Silence Default Sounds
+
+Daggertalk also provides an option to:
+
+- 🧏 **Silence the default monster sounds**
+- 📚 **Require a minimum language skill** to understand the voice pack
+
+This is useful if you're assigning voices to **non-humanoid creatures** (e.g. Nymphs, Daedra, Imps), and want to add roleplay depth or immersion.
+
+### ✍️ How to Use It in Code
+
+In your script, where you register the voice pack like this:
+
+```csharp
+Debug.Log("Registering VoicePack: " + VoicePackId + " for " + VoiceGender + " in Daggertalk");
+ModManager.Instance.SendModMessage(daggertalk.Title, "RegisterVoicePack", data);
+```
+
+👉 You can **optionally** add the following right after:
+
+```csharp
+// Add a skill requirement (e.g. Nymph language skill)
+var skillData = new Tuple<string, string, short>(VoicePackId, nameof(DFCareer.Skills.Nymph), 30); //Needs at least skill level 30
+ModManager.Instance.SendModMessage(daggertalk.Title, "SetVoicePackSkill", skillData, null);
+
+// Mute the default monster sounds
+var silenceData = new Tuple<string, bool>(VoicePackId, true);
+ModManager.Instance.SendModMessage(daggertalk.Title, "SilenceDefaultVoice", silenceData, null);
+```
+
+### 📚 Available Skills
+
+You can find a list of all language skills in the Daggerfall Unity codebase here:  
+👉 [DFCareer Skills Enum](https://github.com/Interkarma/daggerfall-unity/blob/bf530712ba6caee8f12939b0266ecc234ed2f388/Assets/Scripts/API/DFCareer.cs#L448)
+
+Simply replace the `Nymph` name in `DFCareer.Skills.Nymph` with the corresponding skill name.
+
+Example language skills:
+- `Spriggan`
+- `Nymph`
+- `Daedric`
+- `Giantish`
+- `Orcish`
+- `Dragonish`
+- `Harpy`
+- etc.
+
+---
+
+By using these options, you can create more immersive and lore-friendly voice packs that respect player progression and character skills.
+
+Happy modding! 🐉🗣️🎮
