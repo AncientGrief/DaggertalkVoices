@@ -60,7 +60,12 @@ Voice packs are gender-specific or gender-neutral. If you want different voices 
 
 📝 **Important: Save audio files in `.ogg` Ogg Vorbis format!**
 
-Take a look at the `VoiceLines.xlsx` in this repo. These are all the recorded voice lines for the default voice packs from Daggertalk
+Take a look at the `VoiceLines.xlsx` in this repo. These are all the recorded voice lines for the default voice packs from Daggertalk.
+You can choose to strictly record the vanilla Daggertalk lines in your voice, add more lines for each action type or completley record new lines.
+You don't have to follow the vanilla scripts, except for the 10 dialogs. 
+
+If you choose to support these, keep to the script or at least change them in a way that these will make sense when a vanilla voice is choosen against your custom voice 😄
+Feel free to add new Dialogs, but keep in mind that no vanilla voice will respond to these.
 
 ### 📛 File Naming Scheme
 
@@ -163,9 +168,11 @@ Save this file as `subtitles.txt` in the **root folder** of your mod (same level
 
 ---
 
-Now you're ready to build your mod and share it with the world! Refer to the [DFU Modding Wiki – Making Mods](https://dfu-modding.fandom.com/wiki/Making_Mods) on how to build your mod.
+**Make sure to test the mod in Unity directly, hit the play button, activate Daggertalk and you custom voice pack only and see if everything works fine in game**
+
+If everything is working => you're ready to build your mod and share it with the world! Refer to the [DFU Modding Wiki – Making Mods](https://dfu-modding.fandom.com/wiki/Making_Mods) on how to build your mod.
 The script already created your .dfmod file and referenced all necessary files for you! 
 
-❗Make sure to check `Precompile (experimental)`
+❗Make sure to check `Precompile (experimental)` in the Mod Builder!
 
 Happy modding! 🎮🛠️
