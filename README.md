@@ -1,3 +1,4 @@
+This Repository is for Daggerfall Unity mod authors, that want to create their own voice packs for the [Daggertalk mod](https://www.nexusmods.com/daggerfallunity/mods/1037)
 # 🎙️ Create Your Own Daggertalk Voice Pack
 
 Creating a voice pack for **Daggertalk** involves the following steps:
