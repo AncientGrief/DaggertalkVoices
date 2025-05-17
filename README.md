@@ -37,65 +37,6 @@ After installing Unity:
 If placed correctly, you'll find a new menu entry in Unity:  
 **Daggertalk → Create Voice Pack Script** (You'll need it later)
 
----
-
-## 👾 Customize Enemy Usage
-
-In the generated script, you’ll find a section that defines **which enemies** can use your voice pack:
-
-```csharp
-// Enemy IDs that can use this voice pack
-private HashSet<int> _enemyIds = new HashSet<int>()
-{
-    // Vanilla Humans
-    128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146
-
-    // DEX Humans
-    , 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398
-};
-```
-
-If you want your voice pack to be used by **non-human enemies** (like monsters, undead, Daedra, etc.), you need to **replace or extend** this list with the appropriate enemy IDs.
-Make sure the last number isn't followed by a comma.
-
-### 📑 Reference Tables
-
-Use these references to find the correct enemy IDs:
-
-- ✅ **Vanilla Daggerfall Unity enemy IDs:**  
-  👉 [Quests-Foes.txt on GitHub](https://github.com/Interkarma/daggerfall-unity/blob/master/Assets/StreamingAssets/Tables/Quests-Foes.txt)
-
-- ✅ **DEX modded enemies (Daggerfall Enemy Expander):**  
-  👉 [DEX MonsterBase.mdb.csv](https://github.com/SquidKamer/DaggerfallBestiaryProject/blob/main/MonsterBase.mdb.csv)
-
-If you want to create a voice pack for rats, it would look like this:
-```csharp
-// Enemy IDs that can use this voice pack
-private HashSet<int> _enemyIds = new HashSet<int>()
-{
-   // Rats
-   0
-};
-```
-
-or for Nymphs:
-```csharp
-// Enemy IDs that can use this voice pack
-private HashSet<int> _enemyIds = new HashSet<int>()
-{
-   //Vanilla Nymph
-   10
-   
-   //DEX Nymph
-   , 268
-};
-```
-
-Daggertalk also provides an option to silence the default monster noises and add an optional skill check for a language skill.
-See at the end for further information.
-
----
-
 ## 🗂️ Create Your Mod and Audio Structure
 
 1. In Unity, navigate to:  
@@ -222,6 +163,63 @@ Save this file as `subtitles.txt` in the **root folder** of your mod (same level
 4. Fill out all the information
 
 ✨ Done! Your code and configuration will be auto-generated.
+
+---
+
+## 👾 Customize Enemy Usage
+
+In the generated script, you’ll find a section that defines **which enemies** can use your voice pack:
+
+```csharp
+// Enemy IDs that can use this voice pack
+private HashSet<int> _enemyIds = new HashSet<int>()
+{
+    // Vanilla Humans
+    128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146
+
+    // DEX Humans
+    , 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398
+};
+```
+
+If you want your voice pack to be used by **non-human enemies** (like monsters, undead, Daedra, etc.), you need to **replace or extend** this list with the appropriate enemy IDs.
+Make sure the last number isn't followed by a comma.
+
+### 📑 Reference Tables
+
+Use these references to find the correct enemy IDs:
+
+- ✅ **Vanilla Daggerfall Unity enemy IDs:**  
+  👉 [Quests-Foes.txt on GitHub](https://github.com/Interkarma/daggerfall-unity/blob/master/Assets/StreamingAssets/Tables/Quests-Foes.txt)
+
+- ✅ **DEX modded enemies (Daggerfall Enemy Expander):**  
+  👉 [DEX MonsterBase.mdb.csv](https://github.com/SquidKamer/DaggerfallBestiaryProject/blob/main/MonsterBase.mdb.csv)
+
+If you want to create a voice pack for rats, it would look like this:
+```csharp
+// Enemy IDs that can use this voice pack
+private HashSet<int> _enemyIds = new HashSet<int>()
+{
+   // Rats
+   0
+};
+```
+
+or for Nymphs:
+```csharp
+// Enemy IDs that can use this voice pack
+private HashSet<int> _enemyIds = new HashSet<int>()
+{
+   //Vanilla Nymph
+   10
+   
+   //DEX Nymph
+   , 268
+};
+```
+
+Daggertalk also provides an option to silence the default monster noises and add an optional skill check for a language skill.
+See at the end for further information.
 
 ---
 
