@@ -6,7 +6,7 @@ Creating a voice pack for **Daggertalk** involves the following steps:
 1. ✅ Install Unity + Daggerfall Unity source code (this is the trickiest part 😀).
 2. 🎤 Record all voice lines and name the files correctly.
 3. 📁 Set up a folder structure in Unity for your voice pack mod and copy your recorded lines there.
-4. 📓 Create a subtilte.txt file for the subtitles.
+4. 📓 Create a subtitles.txt file for the subtitles.
 5. ⚙️ Use the `Create Voice Pack Script` to automatically generate all necessary code.
 6. 🧱 Compile the mod for target platforms.
 7. 📤 Upload your finished voice pack to Nexus Mods.
