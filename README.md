@@ -30,7 +30,7 @@ You can find setup instructions here:
 
 After installing Unity:
 
-1. Download the script: `VoicePackCreator.cs`
+1. Download the script: [VoicePackCreator.cs](https://github.com/AncientGrief/DaggertalkVoices/blob/main/VoicePackCreator.cs) (`Download raw file` in the top right of the text window)
 2. Place it inside your Unity project at:  
    `Assets/Editor`
 
@@ -58,7 +58,7 @@ Voice packs are gender-specific or gender-neutral. If you want different voices 
 
 📝 **Important: Save audio files in `.ogg` Ogg Vorbis format!**
 
-Take a look at the `VoiceLines.xlsx` in this repo. These are all the recorded voice lines for the default voice packs from Daggertalk.
+Take a look at the [VoiceLines.md](https://github.com/AncientGrief/DaggertalkVoices/blob/main/Voicelines.md) in this repo. These are all the recorded voice lines for the default voice packs from Daggertalk.
 You can choose to strictly record the vanilla Daggertalk lines in your voice, add more lines for each action type or completley record new lines.
 You don't have to follow the vanilla scripts, except for the 10 dialogs. 
 
@@ -136,7 +136,7 @@ m_dialog_100_123
 
 ## 📓 Subtitles
 
-Take a look at the `subtitles.txt` file in the Daggertalk repository for reference.  
+Take a look at the [subtitles.txt](https://github.com/AncientGrief/DaggertalkVoices/blob/main/subtitles.txt) file in this repository for reference.  
 You’ll need to create your own version for your voice pack, containing all voice lines and their corresponding subtitles.
 
 ### 📄 Format
