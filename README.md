@@ -157,12 +157,12 @@ Save this file as `subtitles.txt` in the **root folder** of your mod (same level
 ## 📁 After Recording
 
 1. Place all your correctly named `.ogg` audio files inside your mod's `audio` folder in Unity.
-2. Select all audio files in the Unity Editor.
-3. Select the root folder of you mod in Unity. 
+2. Select all audio files in the Unity Editor and change their setting to compress in memory.
+3. Select the root folder of your mod in Unity. 
 4. Run the **Create Voice Pack Script** from the `Daggertalk` menu.
 4. Fill out all the information
 
-✨ Done! Your code and configuration will be auto-generated.
+✨ Done! Your code and configuration will be auto-generated. 
 
 ---
 
